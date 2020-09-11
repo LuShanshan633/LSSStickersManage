@@ -1,8 +1,6 @@
 # LSSStickersManage
 
-[![CI Status](https://img.shields.io/travis/LuShanshan633/LSSStickersManage.svg?style=flat)](https://travis-ci.org/LuShanshan633/LSSStickersManage)
 [![Version](https://img.shields.io/cocoapods/v/LSSStickersManage.svg?style=flat)](https://cocoapods.org/pods/LSSStickersManage)
-[![License](https://img.shields.io/cocoapods/l/LSSStickersManage.svg?style=flat)](https://cocoapods.org/pods/LSSStickersManage)
 [![Platform](https://img.shields.io/cocoapods/p/LSSStickersManage.svg?style=flat)](https://cocoapods.org/pods/LSSStickersManage)
 
 ## Example
