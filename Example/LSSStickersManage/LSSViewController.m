@@ -21,6 +21,7 @@
     UIView * stickerManageView = [[UIView alloc]initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:stickerManageView];
     stickerManageView.backgroundColor = [UIColor whiteColor];
+    //必须设置父视图View
     [LSSStickersManage shared].superPverlayViews = stickerManageView;
     [LSSStickersManage shared].delegate = self;
 
@@ -29,10 +30,15 @@
     [btn setTitle:@"添加贴图" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+//    //所有贴纸view
+//    NSArray * viewArr = [[LSSStickersManage shared] getStickersViewsArray];
+//    //所有贴纸的元素旋转大小等model数组
+//    NSArray * modelArr = [[LSSStickersManage shared] getStickersModelArray];
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 -(void)addAction{
-    
     [[LSSStickersManage shared] addStreamSessionStickerImage:[UIImage imageNamed:@"IMG_2976"] stikerUrl:@""];
 }
 
