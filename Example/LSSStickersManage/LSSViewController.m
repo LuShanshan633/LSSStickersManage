@@ -18,7 +18,10 @@
 {
     [super viewDidLoad];
     
-    [LSSStickersManage shared].superPverlayViews = self.view;
+    UIView * stickerManageView = [[UIView alloc]initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.view addSubview:stickerManageView];
+    stickerManageView.backgroundColor = [UIColor whiteColor];
+    [LSSStickersManage shared].superPverlayViews = stickerManageView;
     [LSSStickersManage shared].delegate = self;
 
     UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 200, 50)];

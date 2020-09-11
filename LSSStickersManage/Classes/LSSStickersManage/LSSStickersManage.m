@@ -110,6 +110,9 @@
     _currentStickersView = stickersCurrent ;
     [self.superPverlayViews bringSubviewToFront:_currentStickersView] ;
 }
+- (void)removeAllStickersView{
+    
+}
 
 - (UIButton *)backButton
 {

@@ -43,7 +43,7 @@
 		2AAAFFC0654A20F2C8C212F9 /* Pods-LSSStickersManage_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSSStickersManage_Tests.release.xcconfig"; path = "Target Support Files/Pods-LSSStickersManage_Tests/Pods-LSSStickersManage_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4E56310ACF1AAB0748AB27C0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		550E0962F7B8FBFBADA1D9C2 /* Pods_LSSStickersManage_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LSSStickersManage_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6003F58A195388D20070C39A /* LSSStickersManage_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSSStickersManage_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* LSSStickersManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSSStickersManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -110,7 +110,7 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* LSSStickersManage_Example.app */,
+				6003F58A195388D20070C39A /* LSSStickersManage.app */,
 				6003F5AE195388D20070C39A /* LSSStickersManage_Tests.xctest */,
 			);
 			name = Products;
@@ -215,7 +215,7 @@
 			);
 			name = LSSStickersManage_Example;
 			productName = LSSStickersManage;
-			productReference = 6003F58A195388D20070C39A /* LSSStickersManage_Example.app */;
+			productReference = 6003F58A195388D20070C39A /* LSSStickersManage.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* LSSStickersManage_Tests */ = {
@@ -522,7 +522,7 @@
 				INFOPLIST_FILE = "LSSStickersManage/LSSStickersManage-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LSSStickersManage;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -539,7 +539,7 @@
 				INFOPLIST_FILE = "LSSStickersManage/LSSStickersManage-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LSSStickersManage;
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};

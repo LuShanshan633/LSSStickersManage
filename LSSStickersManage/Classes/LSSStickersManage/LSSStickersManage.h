@@ -41,6 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray *)getStickersViewsArray;
 ///清除所有贴图的编辑状态
 - (void)clearOnFirsrResponseWithAllStickers;
+/// 移除所有贴图
+- (void)removeAllStickersView;
 
 @end
 

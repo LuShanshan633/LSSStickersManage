@@ -59,8 +59,6 @@
         [self imgContentView] ;
         [self btDelete] ;
         [self btSizeCtrl] ;
-
-//        [bgView addSubview:self] ;
         self.isOnFirst = YES ;
     }
     return self;
@@ -73,12 +71,11 @@
     
     CGRect rect = CGRectZero ;
     CGFloat scale = newFrame.size.width/newFrame.size.height ;
-    CGFloat sliderContentw = STICKERS_INIT_WIDTH - FLEX_WIDTN * 2 ;
-    CGFloat sliderContenth = (STICKERS_INIT_WIDTH - FLEX_WIDTN * 2)/(scale > 0?scale:1.0);
+    CGFloat sliderContentW = STICKERS_INIT_WIDTH - FLEX_WIDTN * 2 ;
+    CGFloat sliderContentH = (STICKERS_INIT_WIDTH - FLEX_WIDTN * 2)/(scale > 0?scale:1.0);
     rect.origin = CGPointMake(FLEX_WIDTN, FLEX_WIDTN) ;
-    rect.size = CGSizeMake(sliderContentw, sliderContenth) ;
+    rect.size = CGSizeMake(sliderContentW, sliderContentH) ;
     self.imgContentView.frame = rect ;
-    
     self.imgContentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
 
@@ -103,7 +100,7 @@
                                      minWidth + 1 ,
                                      minHeight + 1);
             self.btSizeCtrl.frame =CGRectMake(self.bounds.size.width-BUTTON_WIDTH,
-                                                   self.bounds.size.height-BUTTON_WIDTH,
+                                              self.bounds.size.height-BUTTON_WIDTH-15,
                                                    BUTTON_WIDTH,
                                                    BUTTON_WIDTH);
             self.prevPoint = [recognizer locationInView:self];
@@ -151,11 +148,11 @@
                                      finalWidth,
                                      finalHeight) ;
             
-            self.btSizeCtrl.frame = CGRectMake(self.bounds.size.width-BUTTON_WIDTH  ,
-                                                    self.bounds.size.height-BUTTON_WIDTH ,
-                                                    BUTTON_WIDTH ,
-                                                    BUTTON_WIDTH) ;
-            
+            self.btSizeCtrl.frame =CGRectMake(self.bounds.size.width-BUTTON_WIDTH,
+                                              self.bounds.size.height-BUTTON_WIDTH-15,
+                                                   BUTTON_WIDTH,
+                                                   BUTTON_WIDTH);
+
             self.prevPoint = [recognizer locationOfTouch:0
                                                   inView:self] ;
         }
@@ -318,9 +315,10 @@
     if (!_imgContentView)
     {
         CGRect rect = CGRectZero ;
-        CGFloat sliderContent = STICKERS_INIT_WIDTH - FLEX_WIDTN * 2 ;
+        CGFloat sliderContentW = STICKERS_INIT_WIDTH - FLEX_WIDTN * 2 ;
+        CGFloat sliderContentH = (sliderContentW/scale) -  (FLEX_WIDTN * 2);
         rect.origin = CGPointMake(FLEX_WIDTN, FLEX_WIDTN) ;
-        rect.size = CGSizeMake(sliderContent, sliderContent) ;
+        rect.size = CGSizeMake(sliderContentW, sliderContentH) ;
         
         _imgContentView = [[UIImageView alloc] initWithFrame:rect] ;
         _imgContentView.backgroundColor = nil ;
@@ -341,7 +339,7 @@
 {
     if (!_btSizeCtrl)
     {
-        _btSizeCtrl = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width - BUTTON_WIDTH, self.frame.size.height - BUTTON_WIDTH , BUTTON_WIDTH , BUTTON_WIDTH) ] ;
+        _btSizeCtrl = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width - BUTTON_WIDTH, self.frame.size.height - BUTTON_WIDTH-15 , BUTTON_WIDTH , BUTTON_WIDTH) ] ;
         _btSizeCtrl.userInteractionEnabled = YES;
         _btSizeCtrl.image = [UIImage imageNamed:@"bt_stickers_transform"] ;
         UIPanGestureRecognizer *panResizeGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resizeTranslate:)] ;
