@@ -21,6 +21,7 @@ pod 'LSSStickersManage'
 ## Author
 
 LuShanshan633, gmyuan11@gmail.com
+[简书](https://www.jianshu.com/u/8254877180f5)
 
 ## License
 
