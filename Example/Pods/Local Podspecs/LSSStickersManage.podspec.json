@@ -1,7 +1,7 @@
 {
   "name": "LSSStickersManage",
   "version": "0.1.0",
-  "summary": "A short description of LSSStickersManage.",
+  "summary": "LSSStickersManage",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/LuShanshan633/LSSStickersManage",
   "license": {
@@ -16,7 +16,7 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
   "source_files": "LSSStickersManage/Classes/**/*"
 }

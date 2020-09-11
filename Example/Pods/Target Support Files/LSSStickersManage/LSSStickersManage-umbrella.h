@@ -10,6 +10,10 @@
 #endif
 #endif
 
+#import "LSSStickersModel.h"
+#import "LSSStickersStageView.h"
+#import "LSSStickersView.h"
+#import "UIImage+AddFunction.h"
 
 FOUNDATION_EXPORT double LSSStickersManageVersionNumber;
 FOUNDATION_EXPORT const unsigned char LSSStickersManageVersionString[];
