@@ -1,0 +1,6 @@
+framework module LSSStickersManage {
+  umbrella header "LSSStickersManage-umbrella.h"
+
+  export *
+  module * { export * }
+}

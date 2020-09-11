@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - LSSStickersManage (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - LSSStickersManage (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  LSSStickersManage:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  LSSStickersManage: 8a45383fdad33f3f7ebd3f3aee1a950ed76cbfb6
+
+PODFILE CHECKSUM: c8b91437cea1f4d77848791d9c7615023f2a23c8
+
+COCOAPODS: 1.9.3
