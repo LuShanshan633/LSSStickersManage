@@ -17,8 +17,8 @@
 		1C4ACF610783E112531E335134DFD130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		2DCFF0CE0BD295F1D46D3247F36B192C /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 235A78CFFA6D8B8D86CACD733531CB13 /* UIImage+Compare.m */; };
 		40039E0AF0D764360B1D4FC4F7950D2E /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A67367E018411D614EC8536A8A1C5B /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		455B7D48250B6256005C39A6 /* LSSStickersManage.h in Headers */ = {isa = PBXBuildFile; fileRef = 455B7D46250B6256005C39A6 /* LSSStickersManage.h */; };
-		455B7D49250B6256005C39A6 /* LSSStickersManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B7D47250B6256005C39A6 /* LSSStickersManage.m */; };
+		455B7D4C250B63D6005C39A6 /* LSSStickersManage.h in Headers */ = {isa = PBXBuildFile; fileRef = 455B7D4A250B63D6005C39A6 /* LSSStickersManage.h */; };
+		455B7D4D250B63D6005C39A6 /* LSSStickersManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B7D4B250B63D6005C39A6 /* LSSStickersManage.m */; };
 		575A989AA37D0041BBE61B93456A6A95 /* UIImage+AddFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ADBA2D000FC5C616632B294E94106FD /* UIImage+AddFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		59A089C5C263D61F68FBD2BB93AE58C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		6AE239C5D116E1C06F5705699FB9EAF0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E601BD54DA9BF4071437E60125281FA /* XCTest.framework */; };
@@ -95,8 +95,8 @@
 		3F0D66CF296ABBC57EC4D0452397E235 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
 		40D31A354F1FAF7FFF6826F0C1C7714D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4144E6460618E6EAD09FC96E2A9BF979 /* Pods-LSSStickersManage_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LSSStickersManage_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		455B7D46250B6256005C39A6 /* LSSStickersManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSSStickersManage.h; sourceTree = "<group>"; };
-		455B7D47250B6256005C39A6 /* LSSStickersManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSSStickersManage.m; sourceTree = "<group>"; };
+		455B7D4A250B63D6005C39A6 /* LSSStickersManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSSStickersManage.h; sourceTree = "<group>"; };
+		455B7D4B250B63D6005C39A6 /* LSSStickersManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSSStickersManage.m; sourceTree = "<group>"; };
 		4568279DE47DC3AB91598E1317503995 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
 		465A6F3D8CF013D4BD4E4C9A67E612AE /* LSSStickersManage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LSSStickersManage-umbrella.h"; sourceTree = "<group>"; };
 		4893E232C923D3D899C9A9737F63DA24 /* Pods-LSSStickersManage_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LSSStickersManage_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,10 +253,10 @@
 		88177C41A8FFC913D21E43FFD07315BE /* LSSStickersManage */ = {
 			isa = PBXGroup;
 			children = (
+				455B7D4A250B63D6005C39A6 /* LSSStickersManage.h */,
+				455B7D4B250B63D6005C39A6 /* LSSStickersManage.m */,
 				C233870651C30CB288F02A166F6E5B98 /* LSSStickersModel.h */,
 				D30CF0CA0D47DA2507D0F7492DC66108 /* LSSStickersModel.m */,
-				455B7D46250B6256005C39A6 /* LSSStickersManage.h */,
-				455B7D47250B6256005C39A6 /* LSSStickersManage.m */,
 				24C7FC407CE40AFED820AFF2ECBC3985 /* LSSStickersStageView.h */,
 				E078C8AC32AEC560810F21D360924841 /* LSSStickersStageView.m */,
 				2C44876C2ABCFD5178214251A176D456 /* LSSStickersView.h */,
@@ -392,7 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F720FAF13A108CE6901E0A8B0580E1E8 /* FBSnapshotTestCase-umbrella.h in Headers */,
-				455B7D48250B6256005C39A6 /* LSSStickersManage.h in Headers */,
+				455B7D4C250B63D6005C39A6 /* LSSStickersManage.h in Headers */,
 				00224C929D57F45B70E87359E719948D /* FBSnapshotTestCase.h in Headers */,
 				C49D52712466511E332C952834C81FE1 /* FBSnapshotTestCasePlatform.h in Headers */,
 				90142C6259374E18E640396A59AD379A /* FBSnapshotTestController.h in Headers */,
@@ -576,7 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */,
-				455B7D49250B6256005C39A6 /* LSSStickersManage.m in Sources */,
+				455B7D4D250B63D6005C39A6 /* LSSStickersManage.m in Sources */,
 				8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */,
 				E8AC509D18EBF21B1FEA909652A01108 /* FBSnapshotTestCasePlatform.m in Sources */,
 				88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */,
