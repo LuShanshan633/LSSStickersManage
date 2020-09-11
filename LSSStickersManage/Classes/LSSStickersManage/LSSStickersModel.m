@@ -1,10 +1,9 @@
 
 //
-//  LSSPasterModel.m
-//  LSSPaster
+//  LSSStickersModel.m
+//  LSSStickersManage
 //
-//  Created by 陆闪闪 on 2020/9/10.
-//  Copyright © 2020 LuShanshan. All rights reserved.
+//  Created by 陆闪闪 on 2020/9/11.
 //
 
 #import "LSSStickersModel.h"
@@ -16,20 +15,22 @@
     self.height = size.height;
 }
 
-- (void)setTrans:(CGAffineTransform)trans{
-    _trans = trans;
-    self.transA = trans.a;
-    self.transB = trans.b;
-    self.transC = trans.c;
-    self.transD = trans.d;
-    self.transTx = trans.tx;
-    self.transTy = trans.ty;
+- (void)setTransform:(CGAffineTransform)transform{
+    _transform = transform;
+    self.transA = transform.a;
+    self.transB = transform.b;
+    self.transC = transform.c;
+    self.transD = transform.d;
+    self.transTx = transform.tx;
+    self.transTy = transform.ty;
 }
 - (void)setCenterPoint:(CGPoint)centerPoint{
     _centerPoint = centerPoint;
     self.centerPointX = centerPoint.x;
     self.centerPointY = centerPoint.y;
 }
+
+#pragma mark - 编解码，用于存储nsuserdefault
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self. imgUrl forKey:@"imgUrl"];

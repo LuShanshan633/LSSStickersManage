@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - LSSStickersManage (0.1.2)
+  - LSSStickersManage (0.1.3)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  LSSStickersManage: 9f9aa4373af643ea04d07cb4c7b90546c9821c67
+  LSSStickersManage: cc1402662413bd07a7f7a7c3225d4c26f9497726
 
 PODFILE CHECKSUM: c8b91437cea1f4d77848791d9c7615023f2a23c8
 

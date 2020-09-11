@@ -1,7 +1,7 @@
 //
 //  UIImage+AddFunction.h
 //
-//  Created by mini1 on 14-6-13.
+//  Created by 陆闪闪 on 14-6-13.
 //  Copyright (c) 2014年 LuShanshan. All rights reserved.
 //
 

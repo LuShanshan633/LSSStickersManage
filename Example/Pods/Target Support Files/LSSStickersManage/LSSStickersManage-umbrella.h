@@ -10,8 +10,8 @@
 #endif
 #endif
 
+#import "LSSStickersManage.h"
 #import "LSSStickersModel.h"
-#import "LSSStickersStageView.h"
 #import "LSSStickersView.h"
 #import "UIImage+AddFunction.h"
 

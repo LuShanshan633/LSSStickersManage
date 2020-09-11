@@ -1,18 +1,23 @@
 //
-//  LSSPasterView.m
-//  LSSPaster
+//  LSSStickersView.m
+//  LSSStickersManage
 //
-//  Created by apple on 15/7/8.
-//  Copyright (c) 2015年 LuShanshan. All rights reserved.
+//  Created by 陆闪闪 on 2020/9/11.
 //
 
 #import "LSSStickersView.h"
-
-#define PASTER_SLIDE        150
-#define FLEX_SLIDE          15.0
-#define BT_SLIDE            30.0
-#define BORDER_LINE_WIDTH   1.0
-#define SECURITY_LENGTH     15.0
+//初始图片默认宽度
+#define STICKERS_INIT_WIDTH 150
+//安全距离
+#define FLEX_WIDTN 15.0
+//删除、放大图片宽高
+#define BUTTON_WIDTH 30.0
+//图片边框宽度
+#define IMG_BORDER_LINE_WIDTH 1.0
+//安全距离
+#define SECURITY_LENGTH 15.0
+//
+#define MAX_SCALE_PAN 2
 
 
 @interface LSSStickersView ()
@@ -36,18 +41,17 @@
 - (void)remove
 {
     [self removeFromSuperview] ;
-//    [self.delegate removePaster:self.pasterID] ;
-    [self.delegate removePasterView:self] ;
+    [self.delegate removeStickersView:self] ;
 }
 
 #pragma mark -- Initial
-- (instancetype)initWithStageFrame:(CGRect)stageFrame pasterID:(int)pasterID img:(UIImage *)img imgUrl:(NSString *)imgUrl
+- (instancetype)initWithStageFrame:(CGRect)stageFrame stickerID:(int)stickerID img:(UIImage *)img imgUrl:(NSString *)imgUrl
 {
     self = [super init];
     if (self)
     {
-        self.pasterID = pasterID ;
-        self.imagePaster = img ;
+        self.stickersID = stickerID ;
+        self.imageSticker = img ;
         self.imageUrl = imgUrl;
         scale = img.size.width/img.size.height;
         bgRect = stageFrame ;
@@ -69,9 +73,9 @@
     
     CGRect rect = CGRectZero ;
     CGFloat scale = newFrame.size.width/newFrame.size.height ;
-    CGFloat sliderContentw = PASTER_SLIDE - FLEX_SLIDE * 2 ;
-    CGFloat sliderContenth = (PASTER_SLIDE - FLEX_SLIDE * 2)/(scale > 0?scale:1.0);
-    rect.origin = CGPointMake(FLEX_SLIDE, FLEX_SLIDE) ;
+    CGFloat sliderContentw = STICKERS_INIT_WIDTH - FLEX_WIDTN * 2 ;
+    CGFloat sliderContenth = (STICKERS_INIT_WIDTH - FLEX_WIDTN * 2)/(scale > 0?scale:1.0);
+    rect.origin = CGPointMake(FLEX_WIDTN, FLEX_WIDTN) ;
     rect.size = CGSizeMake(sliderContentw, sliderContenth) ;
     self.imgContentView.frame = rect ;
     
@@ -98,10 +102,10 @@
                                      self.bounds.origin.y,
                                      minWidth + 1 ,
                                      minHeight + 1);
-            self.btSizeCtrl.frame =CGRectMake(self.bounds.size.width-BT_SLIDE,
-                                                   self.bounds.size.height-BT_SLIDE,
-                                                   BT_SLIDE,
-                                                   BT_SLIDE);
+            self.btSizeCtrl.frame =CGRectMake(self.bounds.size.width-BUTTON_WIDTH,
+                                                   self.bounds.size.height-BUTTON_WIDTH,
+                                                   BUTTON_WIDTH,
+                                                   BUTTON_WIDTH);
             self.prevPoint = [recognizer locationInView:self];
         }
         // Resizing
@@ -123,23 +127,23 @@
             
             CGFloat finalWidth  = self.bounds.size.width + (wChange) ;
             CGFloat finalHeight = self.bounds.size.height + (hChange) ;
-            CGFloat Height = PASTER_SLIDE/scale ;
+            CGFloat Height = STICKERS_INIT_WIDTH/scale ;
 
-            if (finalWidth > PASTER_SLIDE*(1+2))
+            if (finalWidth > STICKERS_INIT_WIDTH*(1+MAX_SCALE_PAN))
             {
-                finalWidth = PASTER_SLIDE*(1+2) ;
+                finalWidth = STICKERS_INIT_WIDTH*(1+MAX_SCALE_PAN) ;
             }
-            if (finalWidth < PASTER_SLIDE*(1-2))
+            if (finalWidth < STICKERS_INIT_WIDTH*(1-MAX_SCALE_PAN))
             {
-                finalWidth = PASTER_SLIDE*(1-2) ;
+                finalWidth = STICKERS_INIT_WIDTH*(1-MAX_SCALE_PAN) ;
             }
-            if (finalHeight > Height*(1+2))
+            if (finalHeight > Height*(1+MAX_SCALE_PAN))
             {
-                finalHeight = Height*(1+2) ;
+                finalHeight = Height*(1+MAX_SCALE_PAN) ;
             }
-            if (finalHeight < Height*(1-2))
+            if (finalHeight < Height*(1-MAX_SCALE_PAN))
             {
-                finalHeight = Height*(1-2) ;
+                finalHeight = Height*(1-MAX_SCALE_PAN) ;
             }
             
             self.bounds = CGRectMake(self.bounds.origin.x,
@@ -147,10 +151,10 @@
                                      finalWidth,
                                      finalHeight) ;
             
-            self.btSizeCtrl.frame = CGRectMake(self.bounds.size.width-BT_SLIDE  ,
-                                                    self.bounds.size.height-BT_SLIDE ,
-                                                    BT_SLIDE ,
-                                                    BT_SLIDE) ;
+            self.btSizeCtrl.frame = CGRectMake(self.bounds.size.width-BUTTON_WIDTH  ,
+                                                    self.bounds.size.height-BUTTON_WIDTH ,
+                                                    BUTTON_WIDTH ,
+                                                    BUTTON_WIDTH) ;
             
             self.prevPoint = [recognizer locationOfTouch:0
                                                   inView:self] ;
@@ -173,18 +177,18 @@
     }
 
 }
-- (void)setImagePaster:(UIImage *)imagePaster
+- (void)setImageSticker:(UIImage *)imageSticker
 {
-    _imagePaster = imagePaster ;
+    _imageSticker = imageSticker ;
     
-    self.imgContentView.image = imagePaster ;
+    self.imgContentView.image = imageSticker ;
 }
 
 
 - (void)setupWithBGFrame:(CGRect)bgFrame
 {
     CGRect rect = CGRectZero ;
-    rect.size = CGSizeMake(PASTER_SLIDE, PASTER_SLIDE/scale) ;
+    rect.size = CGSizeMake(STICKERS_INIT_WIDTH, STICKERS_INIT_WIDTH/scale) ;
     self.frame = rect ;
     self.center = CGPointMake(bgFrame.size.width / 2.0, bgFrame.size.height / 2.0) ;
     self.backgroundColor = nil ;
@@ -209,16 +213,14 @@
 - (void)tap:(UITapGestureRecognizer *)tapGesture
 {
     self.isOnFirst = YES ;
-//    [self.delegate makePasterBecomeFirstRespond:self.pasterID] ;
-    [self.delegate makePasterBecomeFirstRespondVIew:self] ;
+    [self.delegate makeStickersBecomeFirstRespondVIew:self] ;
 
 }
 
 - (void)handlePinch:(UIPinchGestureRecognizer *)pinchGesture
 {
     self.isOnFirst = YES ;
-//    [self.delegate makePasterBecomeFirstRespond:self.pasterID] ;
-    [self.delegate makePasterBecomeFirstRespondVIew:self] ;
+    [self.delegate makeStickersBecomeFirstRespondVIew:self] ;
 
     self.imgContentView.transform = CGAffineTransformScale(self.imgContentView.transform,
                                                            pinchGesture.scale,
@@ -229,8 +231,7 @@
 - (void)handleRotation:(UIRotationGestureRecognizer *)rotateGesture
 {
     self.isOnFirst = YES ;
-//    [self.delegate makePasterBecomeFirstRespond:self.pasterID] ;
-    [self.delegate makePasterBecomeFirstRespondVIew:self] ;
+    [self.delegate makeStickersBecomeFirstRespondVIew:self] ;
     self.transform = CGAffineTransformRotate(self.transform, rotateGesture.rotation) ;
     rotateGesture.rotation = 0 ;
 }
@@ -238,8 +239,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     self.isOnFirst = YES ;
-//    [self.delegate makePasterBecomeFirstRespond:self.pasterID] ;
-    [self.delegate makePasterBecomeFirstRespondVIew:self] ;
+    [self.delegate makeStickersBecomeFirstRespondVIew:self] ;
     UITouch *touch = [touches allObjects][0] ;
     touchStart = [touch locationInView:self.superview] ;
 }
@@ -300,14 +300,16 @@
     
     self.btDelete.hidden = !isOnFirst ;
     self.btSizeCtrl.hidden = !isOnFirst ;
-    self.imgContentView.layer.borderWidth = isOnFirst ? BORDER_LINE_WIDTH : 0.0f ;
+    self.imgContentView.layer.borderWidth = isOnFirst ? IMG_BORDER_LINE_WIDTH : 0.0f ;
     
     if (isOnFirst)
     {
-        NSLog(@"pasterID : %d is On",self.pasterID) ;
+        NSLog(@"stickersID : %d is On",self.stickersID) ;
     }
-    if (isOnFirst == NO) {//七牛直播更新推流贴纸的父视图overlayView为了刷新推流的画面
+    if (isOnFirst == NO) {
+        //七牛直播更新推流贴纸的父视图overlayView为了刷新推流的画面
        // [[ICPLStreamingSetManager shareStreamingManager].streamingSession performSelector:@selector(refreshOverlayView:) withObject:self afterDelay:0];
+        [self.delegate endEditStickerView:self];
     }
 }
 
@@ -316,14 +318,14 @@
     if (!_imgContentView)
     {
         CGRect rect = CGRectZero ;
-        CGFloat sliderContent = PASTER_SLIDE - FLEX_SLIDE * 2 ;
-        rect.origin = CGPointMake(FLEX_SLIDE, FLEX_SLIDE) ;
+        CGFloat sliderContent = STICKERS_INIT_WIDTH - FLEX_WIDTN * 2 ;
+        rect.origin = CGPointMake(FLEX_WIDTN, FLEX_WIDTN) ;
         rect.size = CGSizeMake(sliderContent, sliderContent) ;
         
         _imgContentView = [[UIImageView alloc] initWithFrame:rect] ;
         _imgContentView.backgroundColor = nil ;
         _imgContentView.layer.borderColor = [UIColor whiteColor].CGColor ;
-        _imgContentView.layer.borderWidth = BORDER_LINE_WIDTH ;
+        _imgContentView.layer.borderWidth = IMG_BORDER_LINE_WIDTH ;
         _imgContentView.contentMode = UIViewContentModeScaleAspectFit ;
         
         if (![_imgContentView superview])
@@ -339,17 +341,10 @@
 {
     if (!_btSizeCtrl)
     {
-        _btSizeCtrl = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width - BT_SLIDE  ,
-                                                                        self.frame.size.height - BT_SLIDE ,
-                                                                        BT_SLIDE ,
-                                                                        BT_SLIDE)
-                            ] ;
+        _btSizeCtrl = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width - BUTTON_WIDTH, self.frame.size.height - BUTTON_WIDTH , BUTTON_WIDTH , BUTTON_WIDTH) ] ;
         _btSizeCtrl.userInteractionEnabled = YES;
-        _btSizeCtrl.image = [UIImage imageNamed:@"bt_paster_transform"] ;
-
-        UIPanGestureRecognizer *panResizeGesture = [[UIPanGestureRecognizer alloc]
-                                                    initWithTarget:self
-                                                    action:@selector(resizeTranslate:)] ;
+        _btSizeCtrl.image = [UIImage imageNamed:@"bt_stickers_transform"] ;
+        UIPanGestureRecognizer *panResizeGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(resizeTranslate:)] ;
         [_btSizeCtrl addGestureRecognizer:panResizeGesture] ;
         if (![_btSizeCtrl superview]) {
             [self addSubview:_btSizeCtrl] ;
@@ -364,15 +359,12 @@
     if (!_btDelete)
     {
         CGRect btRect = CGRectZero ;
-        btRect.size = CGSizeMake(BT_SLIDE, BT_SLIDE) ;
-
+        btRect.size = CGSizeMake(BUTTON_WIDTH, BUTTON_WIDTH) ;
         _btDelete = [[UIImageView alloc]initWithFrame:btRect] ;
         _btDelete.userInteractionEnabled = YES;
-        _btDelete.image = [UIImage imageNamed:@"bt_paster_delete"] ;
+        _btDelete.image = [UIImage imageNamed:@"bt_stickers_delete"] ;
         
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                                    initWithTarget:self
-                                                    action:@selector(btDeletePressed:)] ;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btDeletePressed:)] ;
         [_btDelete addGestureRecognizer:tap] ;
         
         if (![_btDelete superview]) {
@@ -387,10 +379,5 @@
 {
     [self remove] ;
 }
-
-//- (void)btOriginalAction
-//{
-//    [self.delegate clickOriginalButton] ;
-//}
 
 @end

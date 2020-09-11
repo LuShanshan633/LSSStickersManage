@@ -1,36 +1,32 @@
 //
-//  LSSPasterView.h
-//  LSSPaster
+//  LSSStickersView.h
+//  LSSStickersManage
 //
-//  Created by apple on 15/7/8.
-//  Copyright (c) 2015年 LuShanshan. All rights reserved.
+//  Created by 陆闪闪 on 2020/9/11.
 //
 
 #import <UIKit/UIKit.h>
-//#import "LSSPasterStageView.h"
 
 @class LSSStickersView ;
 
-@protocol XTPasterViewDelegate <NSObject>
-- (void)makePasterBecomeFirstRespond:(int)pasterID ;
-- (void)makePasterBecomeFirstRespondVIew:(LSSStickersView *)pasterView ;
-
-- (void)removePaster:(int)pasterID ;
-- (void)removePasterView:(LSSStickersView*)pasterview ;
-
+@protocol LSSStickersViewDelegate <NSObject>
+@optional
+- (void)makeStickersBecomeFirstRespondVIew:(LSSStickersView *)stickersView ;
+- (void)removeStickersView:(LSSStickersView*)stickersView ;
+- (void)endEditStickerView:(LSSStickersView *)stickersView;
 @end
 
 @interface LSSStickersView : UIView
 
-@property (nonatomic,strong)    UIImage *imagePaster ;
+@property (nonatomic,strong)    UIImage *imageSticker ;
 @property (nonatomic,assign)   CGPoint prevPoint;
 @property (nonatomic,strong)    NSString *imageUrl ;
 
-@property (nonatomic)           int     pasterID ;
+@property (nonatomic)           int     stickersID ;
 @property (nonatomic)           BOOL    isOnFirst ;
-@property (nonatomic,weak)    id <XTPasterViewDelegate> delegate ;
+@property (nonatomic,weak)    id <LSSStickersViewDelegate> delegate ;
 - (instancetype)initWithStageFrame:(CGRect)stageFrame
-                      pasterID:(int)pasterID
+                      stickerID:(int)stickersID
                            img:(UIImage *)img imgUrl:(NSString *)imgUrl;
 - (void)remove ;
 
