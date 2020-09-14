@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取当前页面的所有贴图View
 - (NSArray *)getStickersViewsArray;
 ///清除所有贴图的编辑状态
-- (void)clearOnFirsrResponseWithAllStickers;
+- (void)clearOnFirstResponseWithAllStickers;
 /// 移除所有贴图
 - (void)removeAllStickersView;
 

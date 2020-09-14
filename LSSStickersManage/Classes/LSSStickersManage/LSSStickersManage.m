@@ -94,7 +94,7 @@
 }
 
 
-- (void)clearOnFirsrResponseWithAllStickers{
+- (void)clearOnFirstResponseWithAllStickers{
     [self clearAllOnFirst] ;
     self.currentStickersView = nil;
 }
