@@ -19,16 +19,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_2976" translatesAutoresizingMaskIntoConstraints="NO" id="F6e-6c-ute">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_3076" translatesAutoresizingMaskIntoConstraints="NO" id="xCn-4L-i4i">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="F6e-6c-ute" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="7be-nN-epW"/>
-                            <constraint firstItem="F6e-6c-ute" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="DoP-Qk-cfh"/>
-                            <constraint firstAttribute="trailing" secondItem="F6e-6c-ute" secondAttribute="trailing" id="ZaX-YB-iLE"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="F6e-6c-ute" secondAttribute="bottom" id="jTP-N8-LW1"/>
+                            <constraint firstItem="xCn-4L-i4i" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="6kW-3G-YQ6"/>
+                            <constraint firstItem="xCn-4L-i4i" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="B6N-IX-b5n"/>
+                            <constraint firstAttribute="bottom" secondItem="xCn-4L-i4i" secondAttribute="bottom" id="Lsq-2C-aop"/>
+                            <constraint firstAttribute="trailing" secondItem="xCn-4L-i4i" secondAttribute="trailing" id="s08-qe-lpr"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_2976" width="375" height="667"/>
+        <image name="IMG_3076" width="750" height="1334"/>
     </resources>
 </document>
