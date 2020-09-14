@@ -23,7 +23,7 @@ pod 'LSSStickersManage'
 LuShanshan633, gmyuan11@gmail.com
 
 
-[个人主页](https://www.jianshu.com/u/8254877180f5)
+[个人主页](https://juejin.im/user/3386151544563576)
 
 ## License
 
