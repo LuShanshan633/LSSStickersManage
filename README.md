@@ -20,7 +20,7 @@ pod 'LSSStickersManage'
 
 ## Author
 
-LuShanshan633, gmyuan11@gmail.com
+LuShanshan633, lushanshan611@gmail.com
 
 
 [掘金主页](https://juejin.im/user/3386151544563576)
