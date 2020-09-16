@@ -214,16 +214,16 @@
 
 }
 
-- (void)handlePinch:(UIPinchGestureRecognizer *)pinchGesture
-{
-    self.isOnFirst = YES ;
-    [self.delegate makeStickersBecomeFirstRespondVIew:self] ;
-
-    self.imgContentView.transform = CGAffineTransformScale(self.imgContentView.transform,
-                                                           pinchGesture.scale,
-                                                           pinchGesture.scale) ;
-    pinchGesture.scale = 1 ;
-}
+//- (void)handlePinch:(UIPinchGestureRecognizer *)pinchGesture
+//{
+//    self.isOnFirst = YES ;
+//    [self.delegate makeStickersBecomeFirstRespondVIew:self] ;
+//
+//    self.imgContentView.transform = CGAffineTransformScale(self.imgContentView.transform,
+//                                                           pinchGesture.scale,
+//                                                           pinchGesture.scale) ;
+//    pinchGesture.scale = 1 ;
+//}
 
 - (void)handleRotation:(UIRotationGestureRecognizer *)rotateGesture
 {

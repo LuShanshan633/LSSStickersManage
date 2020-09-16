@@ -30,7 +30,7 @@
     [btn setTitle:@"添加贴图" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(addAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
-    
+
 //    //所有贴纸view
 //    NSArray * viewArr = [[LSSStickersManage shared] getStickersViewsArray];
 //    //所有贴纸的元素旋转大小等model数组
@@ -38,6 +38,7 @@
 
 	// Do any additional setup after loading the view, typically from a nib.
 }
+
 -(void)addAction{
     [[LSSStickersManage shared] addStreamSessionStickerImage:[UIImage imageNamed:@"IMG_2976"] stikerUrl:@""];
 }
